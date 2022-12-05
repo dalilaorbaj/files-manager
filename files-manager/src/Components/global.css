@@ -1,0 +1,594 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Lato";
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search-container {
+    background: #fff;
+    height: 30px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.8s;
+    box-shadow: 4px 4px 6px 0 rgba(255, 255, 255, 0.3),
+      -4px -4px 6px 0 rgba(116, 125, 136, 0.2),
+      inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+      inset 4px 4px 6px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .search-container:hover>.search-input {
+    width: 400px;
+  }
+  
+  .search-container .search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 0px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.8s;
+  }
+  
+  .search-container .search-btn .fas {
+    color: #5cbdbb;
+  }
+  
+  @keyframes hoverShake {
+    0% {
+      transform: skew(0deg, 0deg);
+    }
+  
+    25% {
+      transform: skew(5deg, 5deg);
+    }
+  
+    75% {
+      transform: skew(-5deg, -5deg);
+    }
+  
+    100% {
+      transform: skew(0deg, 0deg);
+    }
+  }
+  
+  .navbar-brand {
+    margin-left: 0.5rem;
+  }
+  
+  /* .wrapper{
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%, -50%);
+      width:100%;
+      max-width: 650px;
+      height:auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  } */
+  .card {
+    flex: 1;
+    flex-basis: 300px;
+    flex-grow: 0;
+    height: 300px;
+    width: 200;
+  
+    border: 2px solid #fff;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+    overflow: hidden;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 200px 300px;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+  }
+  
+  .descriptions {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(235, 235, 235, 0.7);
+    width: 100%;
+    height: 100%;
+    transition: all 0.7s ease-in-out;
+    padding: 20px;
+    box-sizing: border-box;
+    clip-path: circle(0% at 100% 100%);
+    font-size: 0.8rem;
+    line-height: 10%;
+    /* text-overflow:ellipsis; */
+    /* white-space: nowrap; */
+    /* overflow: hidden; */
+    /* height: 250px; */
+  }
+  
+  .dad {
+    width: 150px;
+    height: 200px;
+    line-height: 20px;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -ms-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-line-clamp: 5;
+    -moz-line-clamp: 5;
+    -ms-line-clamp: 5;
+    line-clamp: 5;
+    overflow: hidden;
+  }
+  
+  .movieTitle {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .card:hover .descriptions {
+    left: 0px;
+    transition: all 0.7s ease-in-out;
+    clip-path: circle(75%);
+  }
+  
+  .card:hover {
+    transition: all 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+    transform: scale(0.97);
+  }
+  
+  .card:hover img {
+    transition: all 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+    transform: scale(1.6) rotate(20deg);
+    filter: blur(3px);
+  }
+  
+  .card h1 {
+    color: rgb(23, 23, 184);
+    letter-spacing: 1px;
+    margin: 0px;
+  }
+  
+  .card p {
+    line-height: 24px;
+    height: 70%;
+  }
+  
+  .card button {
+    width: fit-content;
+    height: 40px;
+    cursor: pointer;
+    border-style: none;
+    background-color: rgb(9, 9, 116);
+    color: rgb(180, 239, 255);
+    font-size: 15px;
+    outline: none;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.4);
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .card button:hover {
+    transform: scale(0.95) translateX(-5px);
+    transition: all 0.5s ease-in-out;
+  }
+  
+  
+  
+  
+  
+  .colorcito {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(9, 9, 121, 1) 43%,
+        rgba(0, 212, 255, 1) 98%);
+  }
+  
+  .whiteText {
+    color: white;
+  }
+  
+  .slider {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    background-repeat: no-repeat;
+    flex-direction: row;
+    overflow-y: hidden;
+    overflow-x: auto;
+  
+  }
+  
+  .slide {
+    width: 200px;
+    flex-shrink: 0;
+    height: 100%;
+  }
+  
+  .fixed {
+    position: fixed;
+  }
+  
+  .slider::-webkit-scrollbar {
+    height: 8px;
+    margin-left: 30px;
+    float: left;
+    background: #F5F5F5;
+    overflow-y: scroll;
+  }
+  
+  /* Ponemos un color de fondo y redondeamos las esquinas del thumb */
+  .slider::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+    margin-bottom: 4rem;
+    width: 10px;
+    background-image: linear-gradient(90deg, rgba(0, 212, 255, 1) 0%, rgba(9, 9, 121, 1) 45%, rgba(2, 0, 36, 1) 79%);
+  }
+  
+  #styleScrollbar::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+  }
+  
+  .slider::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+    border-radius: 10px;
+  }
+  
+  #styleScrollbar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+  
+  /* Cambiamos el fondo y agregamos una sombra cuando esté en hover */
+  .slider::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-image: linear-gradient(90deg, rgba(0, 212, 255, 1) 0%, rgba(9, 9, 121, 1) 45%, rgba(2, 0, 36, 1) 79%);
+  
+  }
+  
+  /* Cambiamos el fondo cuando esté en active */
+  .slider::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+    border-radius: 10px;
+    background-image: linear-gradient(90deg, rgba(0, 212, 255, 1) 0%, rgba(9, 9, 121, 1) 45%, rgba(2, 0, 36, 1) 79%);
+  
+  }
+  
+  
+  #styleScrollbar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.44, rgb(122, 153, 217)), color-stop(0.72, rgb(73, 125, 189)), color-stop(0.86, rgb(28, 58, 148)));
+  }
+  
+  /*
+  ESTOS SON LOS STYLES DE LA SCROLLBAR QUE NO SE BIEN COMO PONERSELOS PORQUE NO ES UN ELEMENTO 
+  
+  
+  
+  .force-overflow
+  {
+      min-height: 450px;
+  }
+  
+  
+  
+  
+  #styleScrollbar::-webkit-scrollbar-thumb
+  {
+      border-radius: 10px;
+      background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.44, rgb(122,153,217)), color-stop(0.72, rgb(73,125,189)), color-stop(0.86, rgb(28,58,148)));
+  }
+  
+  */
+  
+  /*OPTIONS CSS*/
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #app {
+    width: 350px;
+    height: 350px;
+    display: grid;
+    place-items: center;
+  }
+  
+  #app ul {
+    position: relative;
+    width: 350px;
+    height: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-radius: 35px;
+    background: rgba(255, 255, 255, 0.65);
+    box-shadow: 0 12.5px 10px rgba(0, 0, 0, 0.08),
+      0 100px 80px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+  }
+  
+  #app ul li {
+    list-style: none;
+    display: grid;
+    place-items: center;
+    font-family: "montserrat";
+    color: #1355f6;
+    z-index: 10;
+    cursor: pointer;
+  }
+  
+  #app ul .focus-el {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc(100% / 3);
+    height: 100%;
+    border-radius: 35px;
+    background: #fff;
+    box-shadow: 0 12.5px 10px rgba(0, 0, 0, 0.015),
+      0 100px 80px rgba(0, 0, 0, 0.03);
+  }
+  
+  #app ul .focus-el.el--2 {
+    left: calc(-100% / 3);
+  }
+  
+  .support {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 10px;
+    display: flex;
+  }
+  
+  .support a {
+    margin: 0 10px;
+    color: #e1f2fb;
+    font-size: 1.8rem;
+    backface-visibility: hidden;
+    transition: all 350ms cubic-bezier(0.38, -0.12, 0.24, 1.91);
+  }
+  
+  .support a:hover {
+    transform: scale(1.1);
+    
+  }
+  
+  .niceButton{
+    border-radius: 10%;
+    padding: 5%;
+    background: linear-gradient(90deg, hsla(234, 98%, 35%, 1) 6%, hsla(224, 71%, 54%, 1) 64%, hsla(214, 100%, 52%, 1) 100%);
+  }
+  
+  .niceTitle {
+    margin-bottom: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    margin-right: 300px;
+    font-family: Helvetica, Arial;
+    font-weight: bold;
+    background: linear-gradient(to right, #1F31CF 0%, #3D91FF 50%, #56C2F0 82%);
+    background-size: 600% 600%;
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 3s ease infinite;
+    animation: AnimationName 3s ease infinite;
+    font-size: 2.0em;
+    line-height: 0.8em;
+    display: inline-block;
+    text-decoration: underline;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all .2s;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .niceTitle:hover {
+    background-image: linear-gradient(43deg, #bc70ff 0%, #C850C0 46%, #4158D0 100%);
+  }
+  
+  @-webkit-keyframes AnimationName {
+    0% {
+      background-position: 0% 50%;
+    }
+  
+    50% {
+      background-position: 100% 50%;
+    }
+  
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @-moz-keyframes AnimationName {
+    0% {
+      background-position: 0% 50%;
+    }
+  
+    50% {
+      background-position: 100% 50%;
+    }
+  
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes AnimationName {
+    0% {
+      background-position: 0% 50%;
+    }
+  
+    50% {
+      background-position: 100% 50%;
+    }
+  
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .sl {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  
+  .crd {
+    margin-right: 10px;
+  }
+  
+  .coloredText {
+    color: #1644ba;
+  }
+  
+  /*hovered icons*/
+  body .crd {
+    position: relative;
+    box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 0.05);
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    column-gap: 5rem;
+  }
+  
+  body .crd .multi-button {
+    z-index: 0;
+    position: absolute;
+    top: 6.25rem;
+    left: 1.25rem;
+    border-radius: 100%;
+    width: 0rem;
+    height: 0rem;
+    transform: translate(-50%, -50%);
+    transition: 0.25s cubic-bezier(0.25, 0, 0, 1);
+  }
+  
+  body .crd .multi-button button {
+    display: grid;
+    align-items: center;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    border-radius: 100%;
+    background: linear-gradient(90deg, rgb(40, 149, 221) 0%, rgb(39, 39, 203) 64%);
+    color: white;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: 0.25s cubic-bezier(0.25, 0, 0, 1);
+    box-shadow: 0 0 0rem -0.25rem #5d9cec;
+  }
+  
+  body .crd .multi-button button:hover {
+    background: white;
+    color: rgb(39, 39, 203);
+    box-shadow: 0 0 1rem -0.25rem #5d9cec;
+  }
+  
+  body .crd .multi-button button:first-child:nth-last-child(1) {
+    left: 25%;
+    top: 25%;
+  }
+  
+  body .crd .multi-button button:first-child:nth-last-child(2):nth-child(1),
+  body .crd .multi-button button:first-child:nth-last-child(2)~*:nth-child(1) {
+    left: 18.75%;
+    top: 13%;
+  }
+  
+  body .crd .multi-button button:first-child:nth-last-child(2):nth-child(2),
+  body .crd .multi-button button:first-child:nth-last-child(2)~*:nth-child(2) {
+    left: 18.75%;
+    top: 37.5%;
+  }
+  
+  body .crd .container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    background: linear-gradient(90deg, rgb(40, 149, 221) 0%, rgb(39, 39, 203) 64%);
+    color: white;
+  }
+  
+  body .crd:hover .multi-button,
+  body .crd .multi-button:focus-within {
+    width: 10rem;
+    height: 10rem;
+  }
+  
+    
+  /*PELICULA RESULTANTE*/
+  .peliculaResultante{
+    display: grid;
+    grid-template-columns: 15% 85%;
+    grid-template-rows: 30% 70%;
+    align-items: center;
+    width: 80%;
+    height: 150px;
+    background: linear-gradient(90deg, hsla(0, 0%, 0%, 1) 0%, hsla(234, 100%, 16%, 1) 28%, hsla(230, 76%, 29%, 1) 59%, hsla(228, 62%, 44%, 1) 80%, hsla(227, 62%, 56%, 1) 100%);
+    margin-bottom: 15px;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  .peliculaResultante .title1 {
+    color: white;
+    font-size: 34px;
+    position: relative;
+    font-weight: bold;
+    grid-column-start:2;
+    grid-row-start:1;
+    margin-top: 2%;
+    text-align: left;
+  }
+  
+  .peliculasResultantes{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 15%
+  }
+  
+  .fotitoResultante{
+    grid-column-start:1;
+    grid-row-start:2;
+    height: 150px;
+    margin-bottom: 45px;
+    border-radius: 10px;
+  }
+  
+  .overviewResultante{
+    font-size: 15px;
+    grid-column-start:2;
+    grid-row-start:2;
+    text-align: left;
+    font-weight: thin;
+  
+  }
