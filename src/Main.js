@@ -6,7 +6,6 @@ import {
 } from "react-router-dom";
 import App from './App';
 import Upload from './Pages/Upload';
-import Details from './Pages/Detail';
 
 function Main() {
     return (
@@ -14,7 +13,6 @@ function Main() {
             <Routes>
                 <Route path='/' element={<App />} />
                 <Route path='/upload/:id' element={<Upload />} />
-                <Route path='/details/:id' element={<Details />} />
             </Routes>
         </BrowserRouter>
     );
