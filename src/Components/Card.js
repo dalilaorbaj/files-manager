@@ -1,7 +1,6 @@
-import React, {Button} from 'react'
+import React from 'react'
 import './global.css';
 const Card = ({ file }) => {
-
 
     return (
         <div className="ml-5 crd">
@@ -12,11 +11,11 @@ const Card = ({ file }) => {
                     <div className="marginTop">
                     {file.labels.map((label) => {
                         return <span className="label">{label} </span>
-                        })
+                    })
                     }
                     </div>
-                    <a href={file.url} target="_blank" rel="noreferrer">
-                        <Button>My custom button</Button>
+                    <a href={file.url}  rel="external noreferrer" target="_blank">
+                        <button className="niceButton">See more</button>
                     </a>
             </div>
         </div>

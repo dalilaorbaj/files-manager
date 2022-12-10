@@ -5,14 +5,16 @@ import {
     Route,
 } from "react-router-dom";
 import App from './App';
-import Upload from './Pages/Upload';
+/*import Upload from './Pages/Upload';*/
+
+/*<Route path='/upload/:id' element={<Upload />} />*/ 
 
 function Main() {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<App />} />
-                <Route path='/upload/:id' element={<Upload />} />
+                
             </Routes>
         </BrowserRouter>
     );
