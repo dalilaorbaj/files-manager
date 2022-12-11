@@ -7,9 +7,9 @@ class SearchForm extends React.Component {
       super(props);
       this.state = {
         filters: {
-          filter1: false,
-          filter2: false,
-          filter3: false,
+          tag1: false,
+          tag2: false,
+          tag3: false,
         }
       };
     }

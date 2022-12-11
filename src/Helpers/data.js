@@ -10,7 +10,7 @@ export let files = [
 		"id": 2,
 		"name": "Ramona", 
 		"date": "", 
-		"labels": ["Negro", "Empleada", "DI"],
+		"labels": ["Blanco", "Empleada", "DI"],
 		"url": "https://drive.google.com/file/d/1AijwHrJQlKww_CEhVmHoOKaoinBTVC-I/view?usp=sharing"
 	},
 	{
@@ -80,7 +80,7 @@ export let files = [
 		"id": 11,
 		"name": "Gabriela", 
 		"date": "", 
-		"labels": ["Negro", "Empleada", "DI"],
+		"labels": ["Negro", "Empleada"],
 		"url": "https://drive.google.com/file/d/1AijwHrJQlKww_CEhVmHoOKaoinBTVC-I/view?usp=sharing"
 	}
 ]
